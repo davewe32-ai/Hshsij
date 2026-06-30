@@ -17,6 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.testTag
@@ -88,9 +89,7 @@ fun DashboardScreen(
                             .clip(CircleShape)
                             .background(Color.White)
                             .padding(4.dp),
-                        error = coil.compose.rememberAsyncImagePainter(
-                            model = Icons.Filled.HomeRepairService
-                        )
+                        error = rememberVectorPainter(Icons.Filled.HomeRepairService)
                     )
 
                     Spacer(modifier = Modifier.width(16.dp))
