@@ -1,0 +1,6 @@
+{
+  "name": "Glorious Homes Inventory",
+  "description": "A professional construction material and storage cabinet inventory manager for Glorious Homes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

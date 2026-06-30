@@ -1,0 +1,1399 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glorious Homes On-Site Inventory Web Hub & Companion</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Font: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            navy: {
+              DEFAULT: '#1E293B',
+              dark: '#0F172A',
+              light: '#334155',
+            },
+            skyBlue: '#0ea5e9',
+            accentOrange: '#f97316',
+            successGreen: '#10b981',
+            warningGold: '#eab308',
+            errorRed: '#ef4444',
+            surfaceLight: '#f8fafc',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #1e293b;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #475569;
+      border-radius: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #0ea5e9;
+    }
+  </style>
+</head>
+<body class="bg-navy-dark text-slate-100 antialiased min-h-screen">
+
+  <!-- Header & Navigation -->
+  <header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="bg-gradient-to-tr from-skyBlue to-accentOrange p-2 rounded-lg text-white shadow-md">
+          <i class="fa-solid fa-house-laptop text-lg"></i>
+        </div>
+        <div>
+          <span class="font-extrabold text-white tracking-tight text-lg">GLORIOUS HOMES</span>
+          <span class="block text-[10px] text-skyBlue font-mono uppercase tracking-widest font-bold">On-Site Inventory System</span>
+        </div>
+      </div>
+      <div class="hidden md:flex items-center space-x-6">
+        <a href="#about" class="text-slate-300 hover:text-white transition font-medium text-sm">Architecture</a>
+        <a href="#companion" class="text-skyBlue hover:text-sky-400 transition font-bold text-sm flex items-center">
+          <i class="fa-solid fa-gamepad mr-1.5"></i> Live Web Simulator
+        </a>
+        <a href="#android-code" class="text-slate-300 hover:text-white transition font-medium text-sm">Android App Specs</a>
+      </div>
+      <div>
+        <a href="#companion" class="bg-skyBlue hover:bg-sky-500 text-white font-bold px-4 py-2 rounded-lg text-sm transition-all shadow-md flex items-center space-x-2">
+          <span>Launch Web App</span>
+          <i class="fa-solid fa-arrow-right text-xs"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden py-20 px-4 sm:px-6 lg:px-8 border-b border-slate-800 bg-gradient-to-b from-slate-950 via-slate-900 to-navy-dark">
+    <!-- Decorative background blobs -->
+    <div class="absolute top-1/4 left-10 w-72 h-72 bg-skyBlue/10 rounded-full blur-3xl -z-10"></div>
+    <div class="absolute bottom-1/4 right-10 w-96 h-96 bg-accentOrange/5 rounded-full blur-3xl -z-10"></div>
+
+    <div class="max-w-5xl mx-auto text-center">
+      <div class="inline-flex items-center space-x-2 bg-slate-800 border border-slate-700 px-3 py-1.5 rounded-full text-xs font-mono text-skyBlue mb-6">
+        <span class="flex h-2 w-2 relative">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+        </span>
+        <span>Vercel Deploy Certified</span>
+        <span class="text-slate-500">|</span>
+        <span>Offline-First Android Architecture</span>
+      </div>
+
+      <h1 class="text-4xl sm:text-6xl font-black text-white tracking-tight mb-6 leading-tight">
+        Rugged Construction <br>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-skyBlue to-accentOrange">Inventory Management</span>
+      </h1>
+
+      <p class="text-lg text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed">
+        The Glorious Homes Inventory app is a dedicated high-performance Android mobile application engineered for builders. Hosted seamlessly on Vercel, this portal provides a companion live sandbox replica and download hub.
+      </p>
+
+      <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+        <a href="#companion" class="w-full sm:w-auto bg-accentOrange hover:bg-orange-600 text-white font-extrabold px-8 py-4 rounded-xl transition duration-200 shadow-lg shadow-orange-500/20 text-center flex items-center justify-center space-x-3">
+          <i class="fa-solid fa-laptop-code text-lg animate-pulse"></i>
+          <span>Open Web Dashboard Simulator</span>
+        </a>
+        <a href="#android-code" class="w-full sm:w-auto bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-bold px-8 py-4 rounded-xl transition duration-200 text-center flex items-center justify-center space-x-2">
+          <i class="fa-brands fa-android text-lg text-emerald-400"></i>
+          <span>Android Code Specifications</span>
+        </a>
+      </div>
+
+      <!-- Quick stat badges -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 max-w-4xl mx-auto">
+        <div class="bg-slate-900/60 border border-slate-800/80 rounded-xl p-4 text-center">
+          <span class="block text-3xl font-extrabold text-white">100%</span>
+          <span class="text-xs text-slate-400">Local-First (Offline Room DB)</span>
+        </div>
+        <div class="bg-slate-900/60 border border-slate-800/80 rounded-xl p-4 text-center">
+          <span class="block text-3xl font-extrabold text-skyBlue">M3</span>
+          <span class="text-xs text-slate-400">Material 3 Jetpack Compose</span>
+        </div>
+        <div class="bg-slate-900/60 border border-slate-800/80 rounded-xl p-4 text-center">
+          <span class="block text-3xl font-extrabold text-accentOrange">Multi</span>
+          <span class="text-xs text-slate-400">Role Tiers (Admin / Crew)</span>
+        </div>
+        <div class="bg-slate-900/60 border border-slate-800/80 rounded-xl p-4 text-center">
+          <span class="block text-3xl font-extrabold text-successGreen">JSON</span>
+          <span class="text-xs text-slate-400">Seamless Backup & Restore</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About and Architecture Section -->
+  <section id="about" class="py-16 px-4 sm:px-6 lg:px-8 border-b border-slate-800 bg-slate-900/40">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-2xl sm:text-4xl font-bold text-white mb-4">Enterprise Mobile Architecture</h2>
+        <p class="text-slate-400">
+          Crafted with professional Gradle modular structures, Room local tables, and asynchronous StateFlow reactivity.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Feature 1 -->
+        <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 hover:border-slate-700 transition">
+          <div class="w-12 h-12 bg-skyBlue/10 rounded-xl flex items-center justify-center text-skyBlue mb-6 text-xl">
+            <i class="fa-solid fa-database"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Relational SQLite Schema</h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-4">
+            Utilizes modern Room DAOs with custom triggers to manage Cabinet Locations, Materials Inventory, Active Construction Projects, and historical Audit Logs.
+          </p>
+          <div class="bg-slate-900 p-3 rounded-lg font-mono text-[11px] text-slate-300">
+            @Entity(tableName = "materials")
+          </div>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 hover:border-slate-700 transition">
+          <div class="w-12 h-12 bg-accentOrange/10 rounded-xl flex items-center justify-center text-accentOrange mb-6 text-xl">
+            <i class="fa-solid fa-fingerprint"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Multi-Tier Access Roles</h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-4">
+            Supports modular role validation directly on on-site terminals. Limits stock deletions to the Administrator while letting Store Keepers adjust stock levels securely.
+          </p>
+          <div class="bg-slate-900 p-3 rounded-lg font-mono text-[11px] text-slate-300">
+            val userRoles = listOf("Administrator", "Store Keeper", "Engineer")
+          </div>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 hover:border-slate-700 transition">
+          <div class="w-12 h-12 bg-successGreen/10 rounded-xl flex items-center justify-center text-successGreen mb-6 text-xl">
+            <i class="fa-solid fa-file-csv"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">On-Demand Exports</h3>
+          <p class="text-slate-400 text-sm leading-relaxed mb-4">
+            Serializes database states instantly on-site. Compiles custom PDF layouts and standard raw CSV records to allow supervisors to email valuations from mobile devices.
+          </p>
+          <div class="bg-slate-900 p-3 rounded-lg font-mono text-[11px] text-slate-300">
+            generateReportString(type, format, materials, projects, movements)
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIVE SIMULATOR APP -->
+  <section id="companion" class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-navy-dark via-slate-900 to-slate-950">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl sm:text-5xl font-extrabold text-white mb-4">Web Portal Simulator</h2>
+        <p class="text-slate-400 text-sm sm:text-base">
+          This mock emulator runs a complete reactive model of the Android Jetpack Compose app written in vanilla JavaScript. Toggle screens, adjust stock, relocate cabinets, and export backups!
+        </p>
+      </div>
+
+      <!-- App Emulator Container -->
+      <div class="border border-slate-700/80 rounded-2xl overflow-hidden shadow-2xl bg-slate-900 flex flex-col min-h-[640px] max-w-4xl mx-auto">
+        <!-- Top Status Bar (Replicates MainActivity role & system logs) -->
+        <div class="bg-slate-950 px-4 py-3 border-b border-slate-800 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-xs">
+          <div class="flex items-center space-x-2">
+            <span class="flex h-2.5 w-2.5 relative">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+            </span>
+            <span class="font-semibold text-slate-200">Glorious Homes On-Site Offline Terminal</span>
+          </div>
+
+          <div class="flex items-center space-x-3 self-start sm:self-auto">
+            <!-- Simulated User Switching -->
+            <label class="text-slate-400 font-medium">Role Tiers:</label>
+            <div class="flex space-x-1 bg-slate-900 border border-slate-800 rounded-lg p-0.5">
+              <button onclick="setSimulatedRole('Administrator')" id="role-admin-btn" class="px-2 py-1 rounded text-[10px] font-bold bg-skyBlue text-white transition-all">Admin</button>
+              <button onclick="setSimulatedRole('Store Keeper')" id="role-keeper-btn" class="px-2 py-1 rounded text-[10px] font-bold text-slate-400 hover:text-white transition-all">Storekeeper</button>
+              <button onclick="setSimulatedRole('Engineer')" id="role-engineer-btn" class="px-2 py-1 rounded text-[10px] font-bold text-slate-400 hover:text-white transition-all">Engineer</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Notification banner for simulated actions -->
+        <div id="toast-banner" class="bg-skyBlue/15 text-skyBlue text-[11px] px-4 py-2 border-b border-skyBlue/20 font-mono flex items-center justify-between hidden">
+          <span id="toast-msg"><i class="fa-solid fa-circle-check mr-2"></i> Action processed successfully!</span>
+          <button onclick="hideToast()" class="text-slate-400 hover:text-white text-xs"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+
+        <!-- Main Body (Scrollable Screen area) -->
+        <div class="flex-1 overflow-y-auto bg-slate-950 p-4 sm:p-6 custom-scrollbar" id="emulator-screen-content">
+          <!-- Active Screen Content Loaded Dynamically via script below -->
+        </div>
+
+        <!-- Emulator Bottom Navigation (Exactly mimicking Android MainActivity test tags) -->
+        <div class="bg-slate-950 border-t border-slate-800 grid grid-cols-5 text-center text-xs">
+          <button onclick="switchTab('dashboard')" id="nav-dashboard-tab" class="py-3 px-1 text-skyBlue font-semibold flex flex-col items-center space-y-1 hover:bg-slate-900 transition">
+            <i class="fa-solid fa-chart-line text-base"></i>
+            <span class="text-[10px] sm:text-[11px] block">Dashboard</span>
+          </button>
+          <button onclick="switchTab('inventory')" id="nav-inventory-tab" class="py-3 px-1 text-slate-400 font-semibold flex flex-col items-center space-y-1 hover:bg-slate-900 transition">
+            <i class="fa-solid fa-boxes-stacked text-base"></i>
+            <span class="text-[10px] sm:text-[11px] block font-medium">Inventory</span>
+          </button>
+          <button onclick="switchTab('cabinets')" id="nav-cabinets-tab" class="py-3 px-1 text-slate-400 font-semibold flex flex-col items-center space-y-1 hover:bg-slate-900 transition">
+            <i class="fa-solid fa-warehouse text-base"></i>
+            <span class="text-[10px] sm:text-[11px] block font-medium">Cabinets</span>
+          </button>
+          <button onclick="switchTab('projects')" id="nav-projects-tab" class="py-3 px-1 text-slate-400 font-semibold flex flex-col items-center space-y-1 hover:bg-slate-900 transition">
+            <i class="fa-solid fa-helmet-safety text-base"></i>
+            <span class="text-[10px] sm:text-[11px] block font-medium">Projects</span>
+          </button>
+          <button onclick="switchTab('settings')" id="nav-settings-tab" class="py-3 px-1 text-slate-400 font-semibold flex flex-col items-center space-y-1 hover:bg-slate-900 transition">
+            <i class="fa-solid fa-server text-base"></i>
+            <span class="text-[10px] sm:text-[11px] block font-medium">Data Hub</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOCK MODAL DIALOGS FOR COMPANION APP -->
+  <!-- Adjust Stock Modal -->
+  <div id="adjust-stock-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-[100] flex items-center justify-center p-4 hidden">
+    <div class="bg-slate-900 border border-slate-700 rounded-xl max-w-md w-full p-6 shadow-2xl">
+      <h3 class="text-lg font-bold text-white mb-2" id="adjust-modal-title">Adjust Stock</h3>
+      <p class="text-xs text-slate-400 mb-4" id="adjust-modal-current"></p>
+
+      <div class="space-y-4 mb-6">
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">New Stock Quantity</label>
+          <input type="number" id="adjust-input-qty" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-white text-sm focus:border-skyBlue outline-none" placeholder="e.g., 50">
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Adjustment Type</label>
+          <select id="adjust-input-type" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-white text-sm focus:border-skyBlue outline-none">
+            <option value="ADJUST">ADJUST (Set Absolute)</option>
+            <option value="ADD">ADD Stock</option>
+            <option value="REMOVE">REMOVE Stock</option>
+            <option value="DAMAGE">DAMAGE Alert</option>
+            <option value="LOST">LOST Claim</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Adjustment Reason</label>
+          <input type="text" id="adjust-input-reason" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-white text-sm focus:border-skyBlue outline-none" placeholder="Manual stock count verification">
+        </div>
+      </div>
+
+      <div class="flex justify-end space-x-3">
+        <button onclick="closeAdjustModal()" class="px-4 py-2 text-sm font-semibold text-slate-400 hover:text-white">Cancel</button>
+        <button onclick="submitStockAdjustment()" class="bg-accentOrange hover:bg-orange-600 text-white px-4 py-2 rounded-lg text-sm font-bold shadow-md">Apply Adjustment</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cabinet Relocation Modal -->
+  <div id="transfer-stock-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-[100] flex items-center justify-center p-4 hidden">
+    <div class="bg-slate-900 border border-slate-700 rounded-xl max-w-md w-full p-6 shadow-2xl">
+      <h3 class="text-lg font-bold text-white mb-2" id="transfer-modal-title">Relocate Material</h3>
+      <p class="text-xs text-slate-400 mb-4">Relocate this entire material category to another rack/cabinet location.</p>
+
+      <div class="space-y-4 mb-6">
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Target Cabinet</label>
+          <select id="transfer-input-cabinet" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-white text-sm focus:border-skyBlue outline-none">
+            <!-- Loaded dynamically -->
+          </select>
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">New Shelf Position</label>
+          <input type="text" id="transfer-input-shelf" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-white text-sm focus:border-skyBlue outline-none" placeholder="e.g. Row 3, Rack A">
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Relocation Reason</label>
+          <input type="text" id="transfer-input-reason" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-white text-sm focus:border-skyBlue outline-none" placeholder="Better storage capacity planning">
+        </div>
+      </div>
+
+      <div class="flex justify-end space-x-3">
+        <button onclick="closeTransferModal()" class="px-4 py-2 text-sm font-semibold text-slate-400 hover:text-white">Cancel</button>
+        <button onclick="submitMaterialTransfer()" class="bg-skyBlue hover:bg-sky-500 text-white px-4 py-2 rounded-lg text-sm font-bold shadow-md">Relocate</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Material Modal -->
+  <div id="add-material-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-[100] flex items-center justify-center p-4 hidden">
+    <div class="bg-slate-900 border border-slate-700 rounded-xl max-w-lg w-full p-6 shadow-2xl max-h-[90vh] overflow-y-auto custom-scrollbar">
+      <h3 class="text-lg font-bold text-white mb-4">Add On-Site Material Category</h3>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+        <div class="sm:col-span-2">
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Material Name</label>
+          <input type="text" id="add-mat-name" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-white text-sm focus:border-skyBlue outline-none" placeholder="e.g. Nails 2-inch Carbon Steel">
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Category</label>
+          <select id="add-mat-category" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-white text-sm focus:border-skyBlue outline-none">
+            <!-- Loaded dynamically -->
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Unit (e.g. bags, pcs, kg)</label>
+          <input type="text" id="add-mat-unit" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-white text-sm focus:border-skyBlue outline-none" placeholder="pcs">
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Initial Quantity</label>
+          <input type="number" id="add-mat-qty" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-white text-sm focus:border-skyBlue outline-none" placeholder="0">
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Alarm Min Stock Alert</label>
+          <input type="number" id="add-mat-min" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-white text-sm focus:border-skyBlue outline-none" placeholder="10">
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Purchase Cost ($)</label>
+          <input type="number" step="0.01" id="add-mat-buy" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-white text-sm focus:border-skyBlue outline-none" placeholder="0.00">
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Est. Selling Value ($)</label>
+          <input type="number" step="0.01" id="add-mat-sell" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-white text-sm focus:border-skyBlue outline-none" placeholder="0.00">
+        </div>
+
+        <div class="sm:col-span-2">
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Supplier Name</label>
+          <input type="text" id="add-mat-supplier" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-white text-sm focus:border-skyBlue outline-none" placeholder="Pacific Steel Co.">
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Cabinet Storage</label>
+          <select id="add-mat-cabinet" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-white text-sm focus:border-skyBlue outline-none">
+            <!-- Loaded dynamically -->
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Shelf Position</label>
+          <input type="text" id="add-mat-shelf" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-white text-sm focus:border-skyBlue outline-none" placeholder="Row 1">
+        </div>
+      </div>
+
+      <div class="flex justify-end space-x-3">
+        <button onclick="closeAddMaterialModal()" class="px-4 py-2 text-sm font-semibold text-slate-400 hover:text-white">Cancel</button>
+        <button onclick="submitNewMaterial()" class="bg-accentOrange hover:bg-orange-600 text-white px-4 py-2 rounded-lg text-sm font-bold shadow-md">Add Material</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Issue Material to Project Modal -->
+  <div id="issue-project-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-[100] flex items-center justify-center p-4 hidden">
+    <div class="bg-slate-900 border border-slate-700 rounded-xl max-w-md w-full p-6 shadow-2xl">
+      <h3 class="text-lg font-bold text-white mb-2">Issue Material to Project</h3>
+      <p class="text-xs text-slate-400 mb-4" id="issue-modal-desc"></p>
+
+      <div class="space-y-4 mb-6">
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Issue to Construction Site</label>
+          <select id="issue-input-project" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-white text-sm focus:border-skyBlue outline-none">
+            <!-- Loaded dynamically -->
+          </select>
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Quantity to Disburse</label>
+          <input type="number" id="issue-input-qty" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-white text-sm focus:border-skyBlue outline-none" placeholder="e.g. 5">
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-300 mb-1">Crew Name / Dispatch notes</label>
+          <input type="text" id="issue-input-reason" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-3 py-2 text-white text-sm focus:border-skyBlue outline-none" placeholder="Issued to John's plumbing crew">
+        </div>
+      </div>
+
+      <div class="flex justify-end space-x-3">
+        <button onclick="closeIssueModal()" class="px-4 py-2 text-sm font-semibold text-slate-400 hover:text-white">Cancel</button>
+        <button onclick="submitMaterialIssue()" class="bg-successGreen hover:bg-emerald-600 text-white px-4 py-2 rounded-lg text-sm font-bold shadow-md">Dispatch Material</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Export Preview Modal -->
+  <div id="export-preview-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-[100] flex items-center justify-center p-4 hidden">
+    <div class="bg-slate-900 border border-slate-700 rounded-xl max-w-lg w-full p-6 shadow-2xl">
+      <h3 class="text-lg font-bold text-white mb-2" id="export-modal-title">Export Report Generated</h3>
+      <p class="text-xs text-slate-400 mb-4">Here is your actual generated database output. You can safely copy it to your clipboard.</p>
+
+      <div class="bg-slate-950 border border-slate-800 p-3 rounded-lg mb-6">
+        <textarea id="export-modal-text" readonly class="w-full h-44 bg-transparent text-emerald-400 font-mono text-[11px] outline-none custom-scrollbar resize-none"></textarea>
+      </div>
+
+      <div class="flex justify-end space-x-3">
+        <button onclick="closeExportModal()" class="px-4 py-2 text-sm font-semibold text-slate-400 hover:text-white">Close</button>
+        <button onclick="copyExportText()" class="bg-accentOrange hover:bg-orange-600 text-white px-4 py-2 rounded-lg text-sm font-bold shadow-md flex items-center space-x-2">
+          <i class="fa-solid fa-copy"></i>
+          <span>Copy to Clipboard</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TECHNICAL CODE SPECIFICATIONS (Android specifications view) -->
+  <section id="android-code" class="py-16 px-4 sm:px-6 lg:px-8 border-t border-slate-800 bg-slate-950">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl font-bold text-white mb-4">Android Application Technical Specs</h2>
+        <p class="text-slate-400">
+          This portal hosts the verified master code structure of the Glorious Homes offline-first Android terminals.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <!-- Code Architecture -->
+        <div>
+          <h3 class="text-xl font-bold text-white mb-4 flex items-center">
+            <i class="fa-solid fa-folder-tree text-skyBlue mr-2"></i>
+            <span>Verified Package Architecture</span>
+          </h3>
+          <p class="text-slate-400 text-sm mb-6">
+            The Android application runs on a clean architecture model matching this structure:
+          </p>
+
+          <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 font-mono text-xs text-slate-300 space-y-2 overflow-x-auto custom-scrollbar">
+            <div><span class="text-slate-500">app/src/main/java/com/example/</span></div>
+            <div class="pl-4 text-emerald-400"><i class="fa-solid fa-file-code"></i> MainActivity.kt <span class="text-slate-500">(Master Controller Screen Router)</span></div>
+            <div class="pl-4 text-slate-400"><i class="fa-solid fa-folder"></i> data/</div>
+            <div class="pl-8 text-skyBlue"><i class="fa-solid fa-folder"></i> dao/ <span class="text-slate-500">(Room DAOs for relational queries)</span></div>
+            <div class="pl-8 text-skyBlue"><i class="fa-solid fa-folder"></i> database/ <span class="text-slate-500">(AppDataBase schema with migrations)</span></div>
+            <div class="pl-8 text-skyBlue"><i class="fa-solid fa-folder"></i> entity/ <span class="text-slate-500">(Material, Cabinet, Project, StockMovement models)</span></div>
+            <div class="pl-8 text-skyBlue"><i class="fa-solid fa-folder"></i> repository/ <span class="text-slate-500">(Local data synchronization patterns)</span></div>
+            <div class="pl-4 text-slate-400"><i class="fa-solid fa-folder"></i> ui/</div>
+            <div class="pl-8 text-orange-400"><i class="fa-solid fa-folder"></i> screens/ <span class="text-slate-500">(Jetpack Compose declarative views)</span></div>
+            <div class="pl-12 text-slate-300">├── DashboardScreen.kt</div>
+            <div class="pl-12 text-slate-300">├── MaterialsScreen.kt <span class="text-slate-500">(Cabinet storage grids)</span></div>
+            <div class="pl-12 text-slate-300">├── CabinetsScreen.kt <span class="text-slate-500">(Rack layout tracking)</span></div>
+            <div class="pl-12 text-slate-300">├── ProjectsScreen.kt <span class="text-slate-500">(Construction sites tracker)</span></div>
+            <div class="pl-12 text-slate-300">├── ReportsScreen.kt <span class="text-slate-500">(CSV & PDF generation)</span></div>
+            <div class="pl-12 text-slate-300">└── BackupRestoreScreen.kt <span class="text-slate-500">(Security roles & settings)</span></div>
+            <div class="pl-8 text-orange-400"><i class="fa-solid fa-folder"></i> viewmodel/ <span class="text-slate-500">(InventoryViewModel StateFlow engine)</span></div>
+          </div>
+        </div>
+
+        <!-- Android Build specs -->
+        <div>
+          <h3 class="text-xl font-bold text-white mb-4 flex items-center">
+            <i class="fa-solid fa-gears text-accentOrange mr-2"></i>
+            <span>Modern Gradle & Build Specifications</span>
+          </h3>
+          <p class="text-slate-400 text-sm mb-6">
+            The Kotlin DSL properties file features optimized dependencies tailored for Android 12+ (API 31 to 35):
+          </p>
+
+          <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 space-y-4 text-sm">
+            <div class="flex justify-between border-b border-slate-800 pb-2">
+              <span class="text-slate-400 font-medium">Kotlin Language Support</span>
+              <span class="text-emerald-400 font-mono text-xs">Kotlin 1.9.22+</span>
+            </div>
+            <div class="flex justify-between border-b border-slate-800 pb-2">
+              <span class="text-slate-400 font-medium">UI Toolkit</span>
+              <span class="text-emerald-400 font-mono text-xs">Jetpack Compose with Material 3 (M3)</span>
+            </div>
+            <div class="flex justify-between border-b border-slate-800 pb-2">
+              <span class="text-slate-400 font-medium">Asynchronous States</span>
+              <span class="text-emerald-400 font-mono text-xs">Coroutines & StateFlow (collectAsStateWithLifecycle)</span>
+            </div>
+            <div class="flex justify-between border-b border-slate-800 pb-2">
+              <span class="text-slate-400 font-medium">Local DB Persistence</span>
+              <span class="text-emerald-400 font-mono text-xs">Room database with SQLite KSP annotations</span>
+            </div>
+            <div class="flex justify-between border-b border-slate-800 pb-2">
+              <span class="text-slate-400 font-medium">Barcode Support</span>
+              <span class="text-emerald-400 font-mono text-xs">Pre-wired for simulated and camera scanning</span>
+            </div>
+            <div class="flex justify-between pb-1">
+              <span class="text-slate-400 font-medium">Build Manifest Package</span>
+              <span class="text-emerald-400 font-mono text-xs">com.aistudio.glorioushomes.inventory</span>
+            </div>
+          </div>
+
+          <div class="mt-6 bg-amber-500/10 border border-amber-500/20 p-4 rounded-xl text-xs text-amber-300 flex items-start space-x-3">
+            <i class="fa-solid fa-circle-exclamation mt-0.5 text-sm"></i>
+            <div>
+              <span class="font-bold block mb-1">Developer Notice:</span>
+              To build a physical APK out of this workspace, configure local signing or use the Google AI Studio settings download export tool to download the complete ZIP archive and open directly in Android Studio.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-950 border-t border-slate-800 py-12 text-center text-slate-500 text-sm">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex items-center justify-center space-x-3 mb-4">
+        <i class="fa-solid fa-house-laptop text-xl text-skyBlue"></i>
+        <span class="text-white font-extrabold tracking-tight">GLORIOUS HOMES</span>
+      </div>
+      <p class="mb-4 text-xs">© 2026 Glorious Homes Construction Co. All rights reserved on-site and remote database channels.</p>
+      <div class="flex justify-center space-x-4 text-xs font-mono">
+        <a href="#about" class="hover:text-white">Architecture Docs</a>
+        <span>•</span>
+        <a href="#companion" class="hover:text-white">Live Simulator Portal</a>
+        <span>•</span>
+        <a href="https://vercel.com" target="_blank" class="hover:text-white">Powered by Vercel Static Sites</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- SIMULATOR STATE ENGINE SCRIPT -->
+  <script>
+    // In-memory Database state replicating standard Room Database contents
+    const initialDatabase = {
+      currentUserRole: "Administrator",
+      categories: [
+        { name: "Cement" },
+        { name: "Steel" },
+        { name: "Electrical" },
+        { name: "Plumbing" },
+        { name: "Roofing" }
+      ],
+      cabinets: [
+        { id: 1, code: "CAB-A", location: "Aisle 1, Rack A", capacity: "90%" },
+        { id: 2, code: "CAB-B", location: "Aisle 2, Rack B", capacity: "40%" },
+        { id: 3, code: "CAB-C", location: "Aisle 3, Bulk Area", capacity: "15%" }
+      ],
+      projects: [
+        { id: 1, name: "Villa Sapphire Site", location: "Sector 5 Hillside", progress: "45%" },
+        { id: 2, name: "Residence Emerald", location: "Downtown Heights", progress: "80%" },
+        { id: 3, name: "Horizon Heights Plot B", location: "East Marina Block", progress: "15%" }
+      ],
+      materials: [
+        { id: 101, name: "Premium Portland Cement", category: "Cement", materialCode: "MAT-CEM-01", barcode: "SCAN-893041", unit: "bags", quantityInStock: 120.0, minimumStockLevel: 20.0, purchasePrice: 8.50, sellingPrice: 12.00, supplier: "Cemex Global", cabinetId: 1, shelfPosition: "Tier 1 Row A", notes: "Keep dry. Stack max 10 bags high." },
+        { id: 102, name: "Reinforced Rebar 12mm", category: "Steel", materialCode: "MAT-STL-04", barcode: "SCAN-491021", unit: "pcs", quantityInStock: 80.0, minimumStockLevel: 15.0, purchasePrice: 15.00, sellingPrice: 22.00, supplier: "Pacific Steel", cabinetId: 3, shelfPosition: "Floor Section B", notes: "Rust protection needed." },
+        { id: 103, name: "Copper Wiring 100m spool", category: "Electrical", materialCode: "MAT-ELC-09", barcode: null, unit: "pcs", quantityInStock: 5.0, minimumStockLevel: 10.0, purchasePrice: 45.00, sellingPrice: 65.00, supplier: "Apex Wire", cabinetId: 2, shelfPosition: "Shelf 2 Row C", notes: "Insulated spool coils." },
+        { id: 104, name: "PVC Drain Pipes 4-inch", category: "Plumbing", materialCode: "MAT-PLM-15", barcode: "SCAN-220199", unit: "pcs", quantityInStock: 0.0, minimumStockLevel: 8.0, purchasePrice: 12.00, sellingPrice: 18.50, supplier: "Plastico Ltd", cabinetId: 2, shelfPosition: "Rack 3", notes: "Fragile weight limits." },
+        { id: 105, name: "Corrugated Roofing Sheets", category: "Roofing", materialCode: "MAT-ROF-02", barcode: null, unit: "pcs", quantityInStock: 45.0, minimumStockLevel: 10.0, purchasePrice: 25.00, sellingPrice: 38.00, supplier: "Peak Coverings", cabinetId: 1, shelfPosition: "Tier 3 Row B", notes: "Weatherproof storage." }
+      ],
+      movements: [
+        { timestamp: Date.now() - 3600000 * 24, type: "ADD", materialName: "Premium Portland Cement", materialId: 101, quantity: 50.0, reason: "Bulk purchase delivery invoice #889", user: "Administrator" },
+        { timestamp: Date.now() - 3600000 * 12, type: "ISSUE_PROJECT", materialName: "Reinforced Rebar 12mm", materialId: 102, quantity: 15.0, reason: "Foundation pour dispatch", user: "Store Keeper", projectName: "Villa Sapphire Site" },
+        { timestamp: Date.now() - 3600000 * 2, type: "REMOVE", materialName: "PVC Drain Pipes 4-inch", materialId: 104, quantity: 10.0, reason: "Reported damage during transit", user: "Store Keeper" }
+      ]
+    };
+
+    // Global simulator state
+    let db = JSON.parse(JSON.stringify(initialDatabase));
+    let activeTab = 'dashboard';
+    let activeFilter = 'All';
+    let editingMaterialId = null;
+
+    // Toast control
+    function showToast(message) {
+      const toast = document.getElementById('toast-banner');
+      const msgSpan = document.getElementById('toast-msg');
+      msgSpan.innerHTML = `<i class="fa-solid fa-circle-check mr-2 text-emerald-400"></i> ${message}`;
+      toast.classList.remove('hidden');
+      setTimeout(hideToast, 4000);
+    }
+
+    function hideToast() {
+      document.getElementById('toast-banner').classList.add('hidden');
+    }
+
+    // Role Switching simulation
+    function setSimulatedRole(role) {
+      db.currentUserRole = role;
+      
+      // Update role buttons colors
+      const adminBtn = document.getElementById('role-admin-btn');
+      const keeperBtn = document.getElementById('role-keeper-btn');
+      const engineerBtn = document.getElementById('role-engineer-btn');
+
+      [adminBtn, keeperBtn, engineerBtn].forEach(b => {
+        b.className = "px-2 py-1 rounded text-[10px] font-bold text-slate-400 hover:text-white transition-all bg-slate-900";
+      });
+
+      if (role === 'Administrator') {
+        adminBtn.className = "px-2 py-1 rounded text-[10px] font-bold bg-skyBlue text-white transition-all";
+      } else if (role === 'Store Keeper') {
+        keeperBtn.className = "px-2 py-1 rounded text-[10px] font-bold bg-skyBlue text-white transition-all";
+      } else {
+        engineerBtn.className = "px-2 py-1 rounded text-[10px] font-bold bg-skyBlue text-white transition-all";
+      }
+
+      showToast(`User terminal security cleared as: ${role}`);
+      renderScreen();
+    }
+
+    // Tab Switching
+    function switchTab(tabId) {
+      activeTab = tabId;
+
+      // Update Navigation button visual states
+      const tabs = ['dashboard', 'inventory', 'cabinets', 'projects', 'settings'];
+      tabs.forEach(t => {
+        const btn = document.getElementById(`nav-${t}-tab`);
+        if (t === tabId) {
+          btn.className = "py-3 px-1 text-skyBlue font-bold flex flex-col items-center space-y-1 bg-slate-900/60 transition";
+          btn.querySelector('i').className = btn.querySelector('i').className.replace('text-slate-400', 'text-skyBlue');
+        } else {
+          btn.className = "py-3 px-1 text-slate-400 font-semibold flex flex-col items-center space-y-1 hover:bg-slate-900/40 transition";
+        }
+      });
+
+      renderScreen();
+    }
+
+    // Modal state controls
+    let selectedMaterialIdForAction = null;
+    function openAdjustModal(id) {
+      selectedMaterialIdForAction = id;
+      const mat = db.materials.find(m => m.id === id);
+      document.getElementById('adjust-modal-title').textContent = `Adjust Stock: ${mat.name}`;
+      document.getElementById('adjust-modal-current').textContent = `Current Stock level in record: ${mat.quantityInStock} ${mat.unit}`;
+      document.getElementById('adjust-input-qty').value = mat.quantityInStock;
+      document.getElementById('adjust-input-reason').value = "";
+      document.getElementById('adjust-stock-modal').classList.remove('hidden');
+    }
+    function closeAdjustModal() {
+      document.getElementById('adjust-stock-modal').classList.add('hidden');
+    }
+
+    function openTransferModal(id) {
+      selectedMaterialIdForAction = id;
+      const mat = db.materials.find(m => m.id === id);
+      document.getElementById('transfer-modal-title').textContent = `Transfer Cabinet: ${mat.name}`;
+      
+      const cabSelect = document.getElementById('transfer-input-cabinet');
+      cabSelect.innerHTML = db.cabinets.map(c => `<option value="${c.id}" ${c.id === mat.cabinetId ? 'selected':''}>${c.code} (${c.location})</option>`).join('');
+      document.getElementById('transfer-input-shelf').value = mat.shelfPosition;
+      document.getElementById('transfer-input-reason').value = "Relocate to wider rack space";
+      document.getElementById('transfer-stock-modal').classList.remove('hidden');
+    }
+    function closeTransferModal() {
+      document.getElementById('transfer-stock-modal').classList.add('hidden');
+    }
+
+    function openAddMaterialModal() {
+      const catSelect = document.getElementById('add-mat-category');
+      catSelect.innerHTML = db.categories.map(c => `<option value="${c.name}">${c.name}</option>`).join('');
+
+      const cabSelect = document.getElementById('add-mat-cabinet');
+      cabSelect.innerHTML = db.cabinets.map(c => `<option value="${c.id}">${c.code} - ${c.location}</option>`).join('');
+
+      document.getElementById('add-mat-name').value = "";
+      document.getElementById('add-mat-qty').value = "";
+      document.getElementById('add-mat-min').value = "";
+      document.getElementById('add-mat-buy').value = "";
+      document.getElementById('add-mat-sell').value = "";
+      document.getElementById('add-mat-unit').value = "pcs";
+      document.getElementById('add-mat-supplier').value = "";
+      document.getElementById('add-mat-shelf').value = "Shelf 1";
+
+      document.getElementById('add-material-modal').classList.remove('hidden');
+    }
+    function closeAddMaterialModal() {
+      document.getElementById('add-material-modal').classList.add('hidden');
+    }
+
+    function openIssueModal(id) {
+      selectedMaterialIdForAction = id;
+      const mat = db.materials.find(m => m.id === id);
+      document.getElementById('issue-modal-desc').textContent = `Select construction site to disburse ${mat.name}. Max available stock: ${mat.quantityInStock} ${mat.unit}`;
+      
+      const projSelect = document.getElementById('issue-input-project');
+      projSelect.innerHTML = db.projects.map(p => `<option value="${p.id}">${p.name} (${p.location})</option>`).join('');
+      document.getElementById('issue-input-qty').value = "";
+      document.getElementById('issue-input-reason').value = "";
+      document.getElementById('issue-project-modal').classList.remove('hidden');
+    }
+    function closeIssueModal() {
+      document.getElementById('issue-project-modal').classList.add('hidden');
+    }
+
+    // Modal Operations (Simulate Room Database triggers)
+    function submitStockAdjustment() {
+      const qty = parseFloat(document.getElementById('adjust-input-qty').value);
+      const type = document.getElementById('adjust-input-type').value;
+      const reason = document.getElementById('adjust-input-reason').value || "Manual audit adjustment";
+      
+      if (isNaN(qty) || qty < 0) {
+        alert("Please enter a valid non-negative quantity.");
+        return;
+      }
+
+      const mat = db.materials.find(m => m.id === selectedMaterialIdForAction);
+      const oldQty = mat.quantityInStock;
+      
+      let finalQty = qty;
+      if (type === 'ADD') finalQty = oldQty + qty;
+      if (type === 'REMOVE' || type === 'DAMAGE' || type === 'LOST') finalQty = Math.max(0, oldQty - qty);
+
+      mat.quantityInStock = finalQty;
+
+      // Add movement log
+      db.movements.unshift({
+        timestamp: Date.now(),
+        type: type,
+        materialName: mat.name,
+        materialId: mat.id,
+        quantity: Math.abs(finalQty - oldQty),
+        reason: reason,
+        user: db.currentUserRole
+      });
+
+      closeAdjustModal();
+      showToast(`Stock levels updated for ${mat.name}. New: ${finalQty} ${mat.unit}`);
+      renderScreen();
+    }
+
+    function submitMaterialTransfer() {
+      const cabinetId = parseInt(document.getElementById('transfer-input-cabinet').value);
+      const shelf = document.getElementById('transfer-input-shelf').value || "Shelf 1";
+      const reason = document.getElementById('transfer-input-reason').value || "Warehouse rearrangement";
+
+      const mat = db.materials.find(m => m.id === selectedMaterialIdForAction);
+      const targetCabinet = db.cabinets.find(c => c.id === cabinetId);
+
+      mat.cabinetId = cabinetId;
+      mat.shelfPosition = shelf;
+
+      // Log movement
+      db.movements.unshift({
+        timestamp: Date.now(),
+        type: "TRANSFER",
+        materialName: mat.name,
+        materialId: mat.id,
+        quantity: mat.quantityInStock,
+        reason: `${reason} (Transferred to ${targetCabinet.code} → ${shelf})`,
+        user: db.currentUserRole
+      });
+
+      closeTransferModal();
+      showToast(`Relocated ${mat.name} to ${targetCabinet.code} storage shelf.`);
+      renderScreen();
+    }
+
+    function submitNewMaterial() {
+      const name = document.getElementById('add-mat-name').value;
+      const category = document.getElementById('add-mat-category').value;
+      const qty = parseFloat(document.getElementById('add-mat-qty').value) || 0.0;
+      const min = parseFloat(document.getElementById('add-mat-min').value) || 5.0;
+      const buy = parseFloat(document.getElementById('add-mat-buy').value) || 0.0;
+      const sell = parseFloat(document.getElementById('add-mat-sell').value) || 0.0;
+      const unit = document.getElementById('add-mat-unit').value || "pcs";
+      const supplier = document.getElementById('add-mat-supplier').value || "Generic Supplier";
+      const cabinetId = parseInt(document.getElementById('add-mat-cabinet').value);
+      const shelf = document.getElementById('add-mat-shelf').value || "Shelf 1";
+
+      if (!name) {
+        alert("Please enter a material name.");
+        return;
+      }
+
+      const codeSuffix = Math.floor(Math.random() * 100);
+      const newMat = {
+        id: Date.now(),
+        name: name,
+        category: category,
+        materialCode: `MAT-${category.toUpperCase().slice(0,3)}-${codeSuffix}`,
+        barcode: `SCAN-${Date.now().toString().slice(-6)}`,
+        unit: unit,
+        quantityInStock: qty,
+        minimumStockLevel: min,
+        purchasePrice: buy,
+        sellingPrice: sell,
+        supplier: supplier,
+        cabinetId: cabinetId,
+        shelfPosition: shelf,
+        notes: "Newly listed on-site material batch."
+      };
+
+      db.materials.push(newMat);
+
+      // Log movement if initial stock exists
+      if (qty > 0) {
+        db.movements.unshift({
+          timestamp: Date.now(),
+          type: "ADD",
+          materialName: name,
+          materialId: newMat.id,
+          quantity: qty,
+          reason: "Initial listing inventory intake",
+          user: db.currentUserRole
+        });
+      }
+
+      closeAddMaterialModal();
+      showToast(`Material catalog created for: ${name}`);
+      renderScreen();
+    }
+
+    function submitMaterialIssue() {
+      const projId = parseInt(document.getElementById('issue-input-project').value);
+      const qty = parseFloat(document.getElementById('issue-input-qty').value);
+      const reason = document.getElementById('issue-input-reason').value || "Dispatched to build crew";
+
+      if (isNaN(qty) || qty <= 0) {
+        alert("Please enter a valid dispatch quantity.");
+        return;
+      }
+
+      const mat = db.materials.find(m => m.id === selectedMaterialIdForAction);
+      if (qty > mat.quantityInStock) {
+        alert(`Insufficient Stock! Cannot disburse ${qty} ${mat.unit}. Active stock is only ${mat.quantityInStock}`);
+        return;
+      }
+
+      const proj = db.projects.find(p => p.id === projId);
+      mat.quantityInStock = Math.max(0, mat.quantityInStock - qty);
+
+      // Log movement
+      db.movements.unshift({
+        timestamp: Date.now(),
+        type: "ISSUE_PROJECT",
+        materialName: mat.name,
+        materialId: mat.id,
+        quantity: qty,
+        reason: reason,
+        projectName: proj.name,
+        user: db.currentUserRole
+      });
+
+      closeIssueModal();
+      showToast(`Dispatched ${qty} ${mat.unit} of ${mat.name} directly to ${proj.name}.`);
+      renderScreen();
+    }
+
+    function deleteMaterial(id) {
+      if (db.currentUserRole !== 'Administrator') {
+        alert("Access Denied: Only Administrators can delete materials from the database.");
+        return;
+      }
+      if (confirm("Are you sure you want to delete this material category? This removes all local storage history.")) {
+        const mat = db.materials.find(m => m.id === id);
+        db.materials = db.materials.filter(m => m.id !== id);
+        showToast(`Permanently deleted material: ${mat.name}`);
+        renderScreen();
+      }
+    }
+
+    // EXPORT PREVIEW TRIGGERS
+    function triggerExport(type, format) {
+      const formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
+      let output = "";
+
+      if (format === 'PDF') {
+        output = `==================================================\n`;
+        output += `           GLORIOUS HOMES INVENTORY REPORT\n`;
+        output += `             Format: PDF Document Preview\n`;
+        output += `==================================================\n`;
+        output += `Report Type: ${type.toUpperCase()}\n`;
+        output += `Generated On: ${new Date().toISOString().slice(0, 19).replace('T', ' ')}\n`;
+        output += `Total Records: ${type === 'valuation' ? db.materials.length : db.movements.length}\n`;
+        output += `--------------------------------------------------\n`;
+        output += `This is a pre-formatted export layout representing a \n`;
+        output += `ready-to-print vector grid for Glorious Homes construction on-site archives.\n\n`;
+        
+        if (type === 'valuation') {
+          db.materials.forEach(it => {
+            output += `Code: ${it.materialCode} | Name: ${it.name} | Qty: ${it.quantityInStock} | Total Cost: ${formatter.format(it.quantityInStock * it.purchasePrice)}\n`;
+          });
+        } else if (type === 'low_stock') {
+          db.materials.filter(it => it.quantityInStock <= it.minimumStockLevel).forEach(it => {
+            output += `Code: ${it.materialCode} | Name: ${it.name} | Stock: ${it.quantityInStock} | Alarm Limit: ${it.minimumStockLevel}\n`;
+          });
+        } else {
+          db.movements.forEach(it => {
+            output += `[${it.type}] ${it.materialName} | Qty: ${it.quantity} | User: ${it.user} | Reason: ${it.reason}\n`;
+          });
+        }
+        output += `==================================================`;
+      } else {
+        // CSV
+        if (type === 'valuation') {
+          output = "Material Code,Name,Category,Supplier,Quantity,Unit,Purchase Price,Selling Price,Asset Value\n";
+          db.materials.forEach(it => {
+            output += `${it.materialCode},"${it.name}",${it.category},${it.supplier},${it.quantityInStock},${it.unit},${it.purchasePrice},${it.sellingPrice},${it.quantityInStock * it.purchasePrice}\n`;
+          });
+        } else if (type === 'low_stock') {
+          output = "Material Code,Name,Category,Quantity in Stock,Minimum Level,Unit,Supplier\n";
+          db.materials.filter(it => it.quantityInStock <= it.minimumStockLevel).forEach(it => {
+            output += `${it.materialCode},"${it.name}",${it.category},${it.quantityInStock},${it.minimumStockLevel},${it.unit},"${it.supplier}"\n`;
+          });
+        } else {
+          output = "Timestamp,Type,Material Name,Quantity,User,Reason\n";
+          db.movements.forEach(it => {
+            const d = new Date(it.timestamp).toISOString().slice(0, 16).replace('T', ' ');
+            output += `${d},${it.type},"${it.materialName}",${it.quantity},${it.user},"${it.reason}"\n`;
+          });
+        }
+      }
+
+      document.getElementById('export-modal-title').textContent = `${format} Report Generated: ${type.toUpperCase()}`;
+      document.getElementById('export-modal-text').value = output;
+      document.getElementById('export-preview-modal').classList.remove('hidden');
+    }
+
+    function closeExportModal() {
+      document.getElementById('export-preview-modal').classList.add('hidden');
+    }
+
+    function copyExportText() {
+      const area = document.getElementById('export-modal-text');
+      area.select();
+      document.execCommand('copy');
+      showToast("Report contents copied directly to computer clipboard!");
+      closeExportModal();
+    }
+
+
+    // BACKUP & RESTORE TRIGGERS
+    function runBackupExport() {
+      const serialized = JSON.stringify(db, null, 2);
+      document.getElementById('export-modal-title').textContent = `Full Database Serialized Backup JSON`;
+      document.getElementById('export-modal-text').value = serialized;
+      document.getElementById('export-preview-modal').classList.remove('hidden');
+    }
+
+    function runDatabaseRestore() {
+      const text = document.getElementById('restore-input-area').value;
+      if (!text.trim()) {
+        alert("Please paste a valid serialized backup string.");
+        return;
+      }
+      try {
+        const parsed = JSON.parse(text);
+        if (parsed.materials && parsed.cabinets && parsed.projects && parsed.movements) {
+          db = parsed;
+          showToast("Offline database loaded. Materials, history, and cabinets synced!");
+          document.getElementById('restore-input-area').value = "";
+          renderScreen();
+        } else {
+          alert("Restore Failed: The pasted JSON structure is missing essential database indices.");
+        }
+      } catch (e) {
+        alert("Restore Failed: Invalid JSON format. Please verify the integrity of the copied block.");
+      }
+    }
+
+
+    // RENDER THE CURRENT SCREEN DYNAMICALLY
+    function renderScreen() {
+      const container = document.getElementById('emulator-screen-content');
+      const formatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
+
+      if (activeTab === 'dashboard') {
+        // Compute dashboard values
+        const totalCostValuation = db.materials.reduce((acc, m) => acc + (m.quantityInStock * m.purchasePrice), 0);
+        const lowStockCount = db.materials.filter(m => m.quantityInStock <= m.minimumStockLevel).length;
+        
+        container.innerHTML = `
+          <div class="space-y-6">
+            <!-- Hero Dashboard Banner -->
+            <div class="bg-gradient-to-r from-navy to-slate-800 p-6 rounded-2xl border border-slate-800 flex justify-between items-center">
+              <div>
+                <h3 class="text-lg font-black text-white">Glorious Homes Dashboard</h3>
+                <p class="text-xs text-slate-400">Real-time summaries calculated from on-site database tables.</p>
+              </div>
+              <div class="text-right">
+                <span class="text-xs font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2 py-1 rounded-md">
+                  <i class="fa-solid fa-cloud-arrow-up mr-1 text-[10px]"></i> Local Terminals Online
+                </span>
+              </div>
+            </div>
+
+            <!-- Quick Metrics Grid -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+              <div class="bg-slate-900 border border-slate-800/80 p-4 rounded-xl shadow">
+                <span class="text-slate-400 text-[10px] sm:text-xs block font-semibold uppercase tracking-wider">Asset Value Cost</span>
+                <span class="text-lg sm:text-xl font-bold text-white block mt-1">${formatter.format(totalCostValuation)}</span>
+              </div>
+              <div class="bg-slate-900 border border-slate-800/80 p-4 rounded-xl shadow">
+                <span class="text-slate-400 text-[10px] sm:text-xs block font-semibold uppercase tracking-wider">Listed Materials</span>
+                <span class="text-lg sm:text-xl font-bold text-skyBlue block mt-1">${db.materials.length} rows</span>
+              </div>
+              <div class="bg-slate-900 border border-slate-800/80 p-4 rounded-xl shadow">
+                <span class="text-slate-400 text-[10px] sm:text-xs block font-semibold uppercase tracking-wider">Storage Cabinets</span>
+                <span class="text-lg sm:text-xl font-bold text-purple-400 block mt-1">${db.cabinets.length} locations</span>
+              </div>
+              <div class="bg-slate-900 border border-slate-800/80 p-4 rounded-xl shadow">
+                <span class="text-slate-400 text-[10px] sm:text-xs block font-semibold uppercase tracking-wider">Low Stock Warnings</span>
+                <span class="text-lg sm:text-xl font-bold ${lowStockCount > 0 ? 'text-errorRed animate-pulse' : 'text-successGreen'} block mt-1">${lowStockCount} items</span>
+              </div>
+            </div>
+
+            <!-- Low Stock Warnings Alerts Area -->
+            ${lowStockCount > 0 ? `
+              <div class="bg-rose-500/10 border border-rose-500/20 rounded-xl p-4 flex items-start space-x-3">
+                <i class="fa-solid fa-triangle-exclamation text-errorRed mt-1"></i>
+                <div>
+                  <h4 class="text-xs font-bold text-rose-300 uppercase tracking-wide">Critical Low-Stock On-Site Alerts</h4>
+                  <div class="mt-2 grid grid-cols-1 gap-2">
+                    ${db.materials.filter(m => m.quantityInStock <= m.minimumStockLevel).map(m => `
+                      <div class="flex justify-between items-center text-xs bg-slate-950 p-2 rounded border border-slate-800">
+                        <span class="text-slate-300 font-semibold">${m.name} (${m.materialCode})</span>
+                        <span class="font-mono text-errorRed font-bold">${m.quantityInStock} ${m.unit} in stock (Min: ${m.minimumStockLevel})</span>
+                      </div>
+                    `).join('')}
+                  </div>
+                </div>
+              </div>
+            ` : `
+              <div class="bg-emerald-500/10 border border-emerald-500/20 p-4 rounded-xl text-xs text-emerald-300 flex items-center space-x-2">
+                <i class="fa-solid fa-circle-check"></i>
+                <span class="font-semibold">Excellent: All material quantities meet minimum safe stockpiles.</span>
+              </div>
+            `}
+
+            <!-- Recent Stock Movements Audit logs -->
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-5">
+              <h4 class="text-sm font-extrabold text-white mb-4 uppercase tracking-wider flex items-center">
+                <i class="fa-solid fa-clock-rotate-left mr-2 text-skyBlue"></i> Recent Stock Logs & Dispatch
+              </h4>
+              <div class="space-y-3">
+                ${db.movements.slice(0, 5).map(mv => {
+                  const dateStr = new Date(mv.timestamp).toLocaleTimeString();
+                  const badgeColor = mv.type === 'ADD' ? 'bg-emerald-500/15 text-emerald-400' : 'bg-rose-500/15 text-rose-400';
+                  return `
+                    <div class="flex items-start justify-between p-3 rounded-lg bg-slate-950 border border-slate-800/80 hover:border-slate-700 text-xs transition">
+                      <div class="space-y-1">
+                        <div class="font-bold text-slate-200">${mv.materialName}</div>
+                        <div class="text-slate-400 text-[11px]">Reason: ${mv.reason} ${mv.projectName ? `→ Project: ${mv.projectName}` : ''}</div>
+                        <div class="text-[10px] text-slate-500 font-mono">${dateStr} • By: ${mv.user}</div>
+                      </div>
+                      <div class="text-right">
+                        <span class="px-2.5 py-1 rounded font-mono font-bold text-[10px] uppercase ${badgeColor}">${mv.type}: ${mv.type === 'ADD' ? '+' : '-'}${mv.quantity}</span>
+                      </div>
+                    </div>
+                  `;
+                }).join('')}
+              </div>
+            </div>
+          </div>
+        `;
+      } 
+      
+      else if (activeTab === 'inventory') {
+        const filtered = activeFilter === 'All' ? db.materials : db.materials.filter(m => m.category === activeFilter);
+        
+        container.innerHTML = `
+          <div class="space-y-6">
+            <!-- Screen Header -->
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+              <div>
+                <h3 class="text-lg font-black text-white">On-Site Materials Inventory</h3>
+                <p class="text-xs text-slate-400">Listed stock batches matching physical cabinet indices.</p>
+              </div>
+              <button onclick="openAddMaterialModal()" class="bg-accentOrange hover:bg-orange-600 text-white font-bold px-4 py-2.5 rounded-lg text-xs transition flex items-center space-x-2 shadow-md">
+                <i class="fa-solid fa-plus"></i>
+                <span>Add Material</span>
+              </button>
+            </div>
+
+            <!-- Category Filters chips -->
+            <div class="flex flex-wrap gap-2 pb-2">
+              <button onclick="setFilter('All')" class="px-3 py-1.5 rounded-lg text-xs font-bold transition-all border ${activeFilter === 'All' ? 'bg-skyBlue border-skyBlue text-white' : 'bg-slate-900 border-slate-800 text-slate-400 hover:text-white'}">All</button>
+              ${db.categories.map(c => `
+                <button onclick="setFilter('${c.name}')" class="px-3 py-1.5 rounded-lg text-xs font-bold transition-all border ${activeFilter === c.name ? 'bg-skyBlue border-skyBlue text-white' : 'bg-slate-900 border-slate-800 text-slate-400 hover:text-white'}">${c.name}</button>
+              `).join('')}
+            </div>
+
+            <!-- Materials List -->
+            <div class="grid grid-cols-1 gap-4">
+              ${filtered.map(mat => {
+                const cab = db.cabinets.find(c => c.id === mat.cabinetId);
+                const isLow = mat.quantityInStock <= mat.minimumStockLevel;
+                const statusColor = mat.quantityInStock === 0.0 ? 'text-errorRed bg-errorRed/10 border-errorRed/20' : (isLow ? 'text-warningGold bg-warningGold/10 border-warningGold/20' : 'text-successGreen bg-successGreen/10 border-successGreen/20');
+                
+                return `
+                  <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 flex flex-col md:flex-row justify-between gap-4 hover:border-slate-700 transition shadow">
+                    <!-- Text Columns -->
+                    <div class="space-y-3 flex-1">
+                      <div>
+                        <div class="flex items-center space-x-2">
+                          <h4 class="text-base font-bold text-white">${mat.name}</h4>
+                          <span class="text-[10px] font-mono font-bold bg-slate-950 border border-slate-800 text-skyBlue px-2 py-0.5 rounded">${mat.materialCode}</span>
+                        </div>
+                        <p class="text-[11px] text-slate-400 mt-1">Barcode: ${mat.barcode || 'None'} | Supplier: ${mat.supplier}</p>
+                      </div>
+
+                      <div class="flex flex-wrap gap-4 text-xs font-medium text-slate-300">
+                        <span class="flex items-center text-slate-400">
+                          <i class="fa-solid fa-warehouse mr-1.5 text-skyBlue text-[11px]"></i> Cabinet: ${cab ? cab.code : 'None'} → ${mat.shelfPosition}
+                        </span>
+                        <span class="flex items-center text-slate-400">
+                          <i class="fa-solid fa-tags mr-1.5 text-purple-400 text-[11px]"></i> Category: ${mat.category}
+                        </span>
+                      </div>
+
+                      <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs">
+                        <div class="bg-slate-950 p-2 rounded border border-slate-800">
+                          <span class="text-slate-500 block text-[10px] uppercase font-bold tracking-wider">Purchase Cost</span>
+                          <span class="text-slate-200 font-bold">${formatter.format(mat.purchasePrice)}</span>
+                        </div>
+                        <div class="bg-slate-950 p-2 rounded border border-slate-800">
+                          <span class="text-slate-500 block text-[10px] uppercase font-bold tracking-wider">Est. Value</span>
+                          <span class="text-slate-200 font-bold">${formatter.format(mat.sellingPrice)}</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Actions & Badges column -->
+                    <div class="flex flex-row md:flex-col justify-between items-end gap-3 min-w-[150px] border-t md:border-t-0 md:border-l border-slate-800 pt-4 md:pt-0 md:pl-4">
+                      <!-- Stock Level Badge -->
+                      <div class="text-right flex flex-col items-end">
+                        <span class="px-3 py-1 rounded-full font-extrabold text-xs border ${statusColor}">
+                          ${mat.quantityInStock} ${mat.unit}
+                        </span>
+                        <span class="text-[10px] text-slate-500 mt-1 font-mono">Min Alert Limit: ${mat.minimumStockLevel}</span>
+                      </div>
+
+                      <!-- Control Actions Buttons -->
+                      <div class="flex space-x-1">
+                        <!-- Dispatch directly to project -->
+                        <button onclick="openIssueModal(${mat.id})" title="Issue to Project Site" class="bg-slate-950 hover:bg-emerald-500/20 text-emerald-400 border border-slate-800 hover:border-emerald-500/40 p-2 rounded-lg text-xs transition">
+                          <i class="fa-solid fa-truck-loading"></i> Dispatch
+                        </button>
+                        <!-- Adjust Quantity button -->
+                        <button onclick="openAdjustModal(${mat.id})" title="Adjust Stock levels" class="bg-slate-950 hover:bg-orange-500/20 text-accentOrange border border-slate-800 hover:border-orange-500/40 p-2 rounded-lg text-xs transition">
+                          <i class="fa-solid fa-sliders"></i> Adjust
+                        </button>
+                        <!-- Transfer Storage button -->
+                        <button onclick="openTransferModal(${mat.id})" title="Transfer Storage Rack" class="bg-slate-950 hover:bg-sky-500/20 text-skyBlue border border-slate-800 hover:border-sky-500/40 p-2 rounded-lg text-xs transition">
+                          <i class="fa-solid fa-right-left"></i> Relocate
+                        </button>
+                        <!-- Permanent delete (requires admin role) -->
+                        <button onclick="deleteMaterial(${mat.id})" title="Delete material" class="bg-slate-950 hover:bg-rose-500/20 text-errorRed border border-slate-800 hover:border-rose-500/40 p-2 rounded-lg text-xs transition">
+                          <i class="fa-solid fa-trash-can"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                `;
+              }).join('')}
+            </div>
+          </div>
+        `;
+      } 
+      
+      else if (activeTab === 'cabinets') {
+        container.innerHTML = `
+          <div class="space-y-6">
+            <div class="flex items-center justify-between">
+              <div>
+                <h3 class="text-lg font-black text-white">Active Storage Cabinets & Racks</h3>
+                <p class="text-xs text-slate-400">Cabinet rows configured inside site storage containers.</p>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              ${db.cabinets.map(cab => {
+                const materialsCount = db.materials.filter(m => m.cabinetId === cab.id).length;
+                return `
+                  <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 space-y-4 hover:border-slate-700 transition shadow">
+                    <div class="flex items-center justify-between">
+                      <div class="bg-purple-500/10 border border-purple-500/20 p-2 rounded-lg text-purple-400">
+                        <i class="fa-solid fa-table-cells text-lg"></i>
+                      </div>
+                      <span class="font-mono text-xs text-slate-400 bg-slate-950 px-2 py-1 rounded border border-slate-800">${cab.code}</span>
+                    </div>
+
+                    <div>
+                      <h4 class="font-extrabold text-white text-base">${cab.location}</h4>
+                      <p class="text-xs text-slate-400 mt-1">Holds ${materialsCount} listed material categories.</p>
+                    </div>
+
+                    <!-- Capacity indicator bar -->
+                    <div class="space-y-1">
+                      <div class="flex justify-between text-[11px] font-mono text-slate-400">
+                        <span>Physical Vol. Cap</span>
+                        <span class="text-slate-200 font-bold">${cab.capacity}</span>
+                      </div>
+                      <div class="w-full bg-slate-950 h-2 rounded-full overflow-hidden border border-slate-800">
+                        <div class="bg-purple-500 h-full rounded-full" style="width: ${cab.capacity}"></div>
+                      </div>
+                    </div>
+                  </div>
+                `;
+              }).join('')}
+            </div>
+          </div>
+        `;
+      } 
+      
+      else if (activeTab === 'projects') {
+        container.innerHTML = `
+          <div class="space-y-6">
+            <div>
+              <h3 class="text-lg font-black text-white">Active Construction Projects</h3>
+              <p class="text-xs text-slate-400">Home development plots receiving inventory dispatches.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              ${db.projects.map(proj => {
+                // Calculate total logs issues count
+                const logsCount = db.movements.filter(mv => mv.type === 'ISSUE_PROJECT' && mv.projectName === proj.name).length;
+                return `
+                  <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 space-y-4 hover:border-slate-700 transition shadow flex flex-col justify-between">
+                    <div class="space-y-3">
+                      <div class="flex justify-between items-center">
+                        <div class="bg-emerald-500/15 p-2 rounded-lg text-emerald-400">
+                          <i class="fa-solid fa-helmet-safety text-lg animate-pulse"></i>
+                        </div>
+                        <span class="text-[10px] font-mono font-bold bg-slate-950 px-2.5 py-1 rounded border border-slate-800 text-skyBlue uppercase">Active Site</span>
+                      </div>
+
+                      <div>
+                        <h4 class="font-extrabold text-white text-base">${proj.name}</h4>
+                        <p class="text-xs text-slate-400 mt-1"><i class="fa-solid fa-location-dot mr-1 text-slate-500"></i> ${proj.location}</p>
+                      </div>
+
+                      <div class="bg-slate-950 border border-slate-800/80 p-3 rounded-lg text-xs flex justify-between">
+                        <span class="text-slate-400">Stock issuances log:</span>
+                        <span class="text-white font-mono font-bold">${logsCount} logs</span>
+                      </div>
+                    </div>
+
+                    <!-- Build Progress indicator bar -->
+                    <div class="space-y-1.5 pt-4 border-t border-slate-800 mt-4">
+                      <div class="flex justify-between text-[10px] font-mono text-slate-400 uppercase tracking-wider font-semibold">
+                        <span>Site Build Progress</span>
+                        <span class="text-slate-200 font-bold">${proj.progress}</span>
+                      </div>
+                      <div class="w-full bg-slate-950 h-2 rounded-full overflow-hidden border border-slate-800">
+                        <div class="bg-emerald-500 h-full rounded-full" style="width: ${proj.progress}"></div>
+                      </div>
+                    </div>
+                  </div>
+                `;
+              }).join('')}
+            </div>
+          </div>
+        `;
+      } 
+      
+      else if (activeTab === 'settings') {
+        container.innerHTML = `
+          <div class="space-y-6">
+            <!-- Data center sub-menus -->
+            <div class="bg-gradient-to-r from-navy to-slate-800 p-6 rounded-2xl border border-slate-800">
+              <h3 class="text-lg font-black text-white">Glorious Homes Offline Data Hub</h3>
+              <p class="text-xs text-slate-400 mt-1">Enterprise management utilities for backups, local database migration, role assignment, and CSV/PDF reporting.</p>
+            </div>
+
+            <!-- Double Grid columns -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              
+              <!-- Left side: Backups & Restore tools -->
+              <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 space-y-4 shadow">
+                <h4 class="text-sm font-extrabold text-white uppercase tracking-wider flex items-center">
+                  <i class="fa-solid fa-server mr-2 text-accentOrange"></i> Serialized JSON Database Core
+                </h4>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                  Glorious Homes runs fully offline to ensure perfect performance on-site. Backups are exported as fully serialized offline JSON strings which can be securely stored or restored on any device.
+                </p>
+
+                <div class="flex space-x-2 pt-2">
+                  <button onclick="runBackupExport()" class="flex-1 bg-accentOrange hover:bg-orange-600 text-white font-bold py-2.5 rounded-lg text-xs transition-all shadow-md flex items-center justify-center space-x-2">
+                    <i class="fa-solid fa-upload"></i>
+                    <span>Export JSON Core</span>
+                  </button>
+                  <button onclick="runDatabaseRestore()" class="flex-1 bg-slate-950 hover:bg-slate-800 border border-slate-800 text-slate-300 font-bold py-2.5 rounded-lg text-xs transition-all flex items-center justify-center space-x-2">
+                    <i class="fa-solid fa-download"></i>
+                    <span>Restore / Import</span>
+                  </button>
+                </div>
+
+                <div class="space-y-1 pt-2">
+                  <label class="block text-[10px] font-bold text-slate-400 uppercase tracking-wider font-semibold">Paste Backup String to Restore:</label>
+                  <textarea id="restore-input-area" placeholder="Paste database backup JSON string here..." class="w-full h-24 bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-xs text-slate-300 font-mono focus:border-skyBlue outline-none resize-none custom-scrollbar"></textarea>
+                </div>
+              </div>
+
+              <!-- Right side: Reporting & Analytics PDF/CSV Exports -->
+              <div class="bg-slate-900 border border-slate-800 rounded-xl p-5 space-y-4 shadow">
+                <h4 class="text-sm font-extrabold text-white uppercase tracking-wider flex items-center">
+                  <i class="fa-solid fa-file-invoice mr-2 text-successGreen"></i> On-Demand CSV & PDF Analytics
+                </h4>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                  Trigger raw document compilations to extract local tables instantly to portable file schemas. Use PDF for printing and CSV for corporate auditing.
+                </p>
+
+                <div class="space-y-3 pt-2">
+                  <!-- Valuation row -->
+                  <div class="bg-slate-950 border border-slate-800 p-3 rounded-lg flex items-center justify-between">
+                    <div>
+                      <span class="block text-xs font-bold text-slate-200">Inventory Valuation</span>
+                      <span class="text-[10px] text-slate-500">Asset sums & cost indexes</span>
+                    </div>
+                    <div class="flex space-x-1">
+                      <button onclick="triggerExport('valuation', 'CSV')" class="bg-slate-900 hover:bg-slate-800 px-3 py-1.5 rounded text-[10px] font-mono border border-slate-800 text-skyBlue font-bold">CSV</button>
+                      <button onclick="triggerExport('valuation', 'PDF')" class="bg-slate-900 hover:bg-slate-800 px-3 py-1.5 rounded text-[10px] font-mono border border-slate-800 text-accentOrange font-bold">PDF</button>
+                    </div>
+                  </div>
+
+                  <!-- Low stock row -->
+                  <div class="bg-slate-950 border border-slate-800 p-3 rounded-lg flex items-center justify-between">
+                    <div>
+                      <span class="block text-xs font-bold text-slate-200">Low Stock Alarm List</span>
+                      <span class="text-[10px] text-slate-500">Depleted material rows</span>
+                    </div>
+                    <div class="flex space-x-1">
+                      <button onclick="triggerExport('low_stock', 'CSV')" class="bg-slate-900 hover:bg-slate-800 px-3 py-1.5 rounded text-[10px] font-mono border border-slate-800 text-skyBlue font-bold">CSV</button>
+                      <button onclick="triggerExport('low_stock', 'PDF')" class="bg-slate-900 hover:bg-slate-800 px-3 py-1.5 rounded text-[10px] font-mono border border-slate-800 text-accentOrange font-bold">PDF</button>
+                    </div>
+                  </div>
+
+                  <!-- Movements log -->
+                  <div class="bg-slate-950 border border-slate-800 p-3 rounded-lg flex items-center justify-between">
+                    <div>
+                      <span class="block text-xs font-bold text-slate-200">Stock Movements History</span>
+                      <span class="text-[10px] text-slate-500">Intake and project dispatch logs</span>
+                    </div>
+                    <div class="flex space-x-1">
+                      <button onclick="triggerExport('movements', 'CSV')" class="bg-slate-900 hover:bg-slate-800 px-3 py-1.5 rounded text-[10px] font-mono border border-slate-800 text-skyBlue font-bold">CSV</button>
+                      <button onclick="triggerExport('movements', 'PDF')" class="bg-slate-900 hover:bg-slate-800 px-3 py-1.5 rounded text-[10px] font-mono border border-slate-800 text-accentOrange font-bold">PDF</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    // Set filter action
+    function setFilter(category) {
+      activeFilter = category;
+      renderScreen();
+    }
+
+    // Initialize Simulator view
+    setSimulatedRole('Administrator');
+  </script>
+</body>
+</html>
